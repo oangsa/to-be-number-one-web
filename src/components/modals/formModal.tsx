@@ -8,13 +8,14 @@ import Swal, { SweetAlertOptions } from "sweetalert2"
 interface leaveModal {
     name: string,
     surname: string,
+    month: number
 }
 
 interface leaveFrom {
     other: string
 }
 
-const FormModal: FC<leaveModal> = ({ name, surname }) => {
+const FormModal: FC<leaveModal> = ({ name, surname, month }) => {
     const router: NextRouter = useRouter()
 
     const [data, setData] = useState<leaveFrom>({
@@ -60,7 +61,7 @@ const FormModal: FC<leaveModal> = ({ name, surname }) => {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({other: data.other, name: name, surname: surname}),
+            body: JSON.stringify({other: data.other, name: name, surname: surname, oldMonth: month}),
         })
 
         console.log(await res.json())

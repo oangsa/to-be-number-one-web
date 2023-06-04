@@ -25,7 +25,7 @@ export default async function add( req: NextApiRequest,res: NextApiResponse) {
 
     if ( check !== null ) return res.status(201).send({ message: "Student is already exist!" })
 
-    const studentStruct = {
+    const studentStruct: student = {
         studentData: {
             name: name,
             surname: surname,
@@ -34,6 +34,7 @@ export default async function add( req: NextApiRequest,res: NextApiResponse) {
             class: Class,
             reason: '',
             total: 0,
+            oldMonth: 1,
             timestamps: new Date(),
         },
         loginData: {

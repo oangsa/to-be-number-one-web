@@ -3,12 +3,12 @@ import { Schema, model, models } from "mongoose";
 const usetageSchema = new Schema({
     currentData: {
         total: Number,
-        day: Number,
-        month: Number
+        Day: Number,
+        Month: Number
     },
     oldData: {
-        day: Number,
-        month: Number
+        Day: Number,
+        Month: Number
     }
 })
 

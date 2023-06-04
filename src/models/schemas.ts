@@ -1,6 +1,6 @@
 import { Schema, model, models } from "mongoose";
 
-const studentSchema = new Schema({
+const studentSchema: Schema<student> = new Schema({
     studentData: {
         name: String,
         surname: String,
@@ -9,6 +9,7 @@ const studentSchema = new Schema({
         class: Number,
         reason: String,
         total: Number,
+        oldMonth: Number,
         timestamps: Date,
     },
     loginData: {

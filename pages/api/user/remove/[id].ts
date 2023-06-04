@@ -7,12 +7,12 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 export default async function remove( req: NextApiRequest, res: NextApiResponse ) {
   if (req.method !== "DELETE") return res.status(405).send({ message: "Only DELETE method are allowed!" })
 
-  const { id } = req.query
+  const { id, surname } = req.query
 
   try {
     connectMongo()
     
-    const result = await Note.deleteOne({"studentData.studentId": id})
+    const result = await Note.deleteOne({"studentData.name": id, "studentData.surname": surname})
 
     if (!result.acknowledged) return res.status(201).send({ message: false })
 

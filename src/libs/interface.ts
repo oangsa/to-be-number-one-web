@@ -6,6 +6,8 @@ export interface studentData {
     class: number,
     reason: string,
     total: number,
+    oldMonth: number,
+    timestamps: Date
 }
 
 export interface loginData {

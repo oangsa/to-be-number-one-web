@@ -18,7 +18,7 @@ const UserListComp = ({ name, surname, studentId, secondary, Class, total, editS
             confirmButtonText: 'Delete'
         }).then((result) => {
             if (result.isConfirmed) {
-                Del(studentId)
+                Del(name, surname)
                 Swal.fire(
                     'Deleted!',
                     'Your file has been deleted.',

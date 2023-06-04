@@ -78,7 +78,11 @@ const SalesOverview = () => {
             fillSeriesColor: false,
         },
     };
-    const seriescolumnchart: any = [
+
+
+    
+
+    const seriescolumnchart: any[] = [
         {
             name: 'Month Use',
             data: [1, 2, 3, 4, 5, 3],

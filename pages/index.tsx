@@ -21,6 +21,8 @@ export default function Dashboard() {
         class: 0,
         reason: "",
         total: 0,
+        oldMonth: 0,
+        timestamps: new Date()
     })
     const [loginData, setLoginData] = useState<loginData>({
         username: "",
@@ -66,7 +68,7 @@ export default function Dashboard() {
                             <div>
                                 <div className="mt-2 ml-4 inline-flex items-center justify-center rounded-lg text-lg text-center sm:w-auto">
                                     ⤷ 
-                                    เข้าใช้บริการแล้ว {studentData.total} ครั้ง
+                                    เข้าใช้บริการแล้ว {studentData.oldMonth} ครั้ง
                                 </div>
                             </div>
                         </div>
@@ -81,7 +83,7 @@ export default function Dashboard() {
                                   ลงข้อมูลที่นี่
                               </button>
                                 
-                                <FormModal name={studentData.name} surname={studentData.surname} />
+                                <FormModal name={studentData.name} surname={studentData.surname} month={studentData.oldMonth} />
                             </div>
                         </div>
                         <div className="flex-none rounded bg-white h-40 shadow-sm">

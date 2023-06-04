@@ -1,7 +1,7 @@
 import { NextRouter, useRouter } from "next/router";
 
-const del = async (id: number) => {
-    const res = await fetch(`/api/user/remove/${id}`, {
+const del = async (name: string, surname: string) => {
+    const res = await fetch(`/api/user/remove/${name}?surname=${surname}`, {
         method: "DELETE",
     })
 

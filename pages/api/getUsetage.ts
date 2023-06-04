@@ -1,15 +1,15 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 import connectMongo from '@/src/libs/connectMongo'
-import Note from '@/src/models/schemas'
+import Usetage from '@/src/models/usetage'
 
-export default async function getRecent(req: NextApiRequest, res: NextApiResponse) {
+export default async function getUsetage(req: NextApiRequest, res: NextApiResponse) {
     if (req.method !== "GET") return res.status(405).send({message: "Only GET method is allowed!"})
 
     try {
         connectMongo()
         
-        const result = await Note.find({}).sort({"studentData.timestamps": -1}).limit(4)
+        const result = await Usetage.findOne({})
         
         if (result === null) return res.status(400).send({message: "User is not valid."})
 

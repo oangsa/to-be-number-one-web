@@ -54,18 +54,19 @@ const RecentTransactions = () => {
         
         {data.map(element => {
           return (
-            <TimelineItem>
-              <TimelineOppositeContent>{new Date(element.studentData.timestamps).toLocaleString("th-TH", {timeZone: "Asia/Bangkok"}).split(" ")[1]}</TimelineOppositeContent>
+            <TimelineItem key={element.studentData.name}>
+              <TimelineOppositeContent>{new Date(element.studentData.timestamps).toLocaleString("th-TH", {timeZone: "Asia/Bangkok"}).split(" ")[1].split(":")[0]}:{new Date(element.studentData.timestamps).toLocaleString("th-TH", {timeZone: "Asia/Bangkok"}).split(" ")[1].split(":")[1]}</TimelineOppositeContent>
               <TimelineSeparator>
-                <TimelineDot color="primary" variant="filled" />
-                <TimelineConnector />
+                <TimelineDot color="success" variant="outlined" />
               </TimelineSeparator>
-              <TimelineContent>{element.studentData.name} {element.studentData.surname}</TimelineContent>
+              <TimelineContent>{element.studentData.name} {element.studentData.surname} ม.{element.studentData.yearClass}/{element.studentData.class}
+                <p>
+                {"เหตุผลที่เข้าใช้:"} {element.studentData.reason}
+                </p> 
+              </TimelineContent>
             </TimelineItem>
           )
         })}
-
-         
         </Timeline>
       </>
     </DashboardCard>

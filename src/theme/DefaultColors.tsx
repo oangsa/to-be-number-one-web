@@ -57,24 +57,24 @@ const baselightTheme = createTheme({
     divider: "#e5eaef",
   },
   typography: {
-    fontFamily: "'Plus Jakarta Sans', sans-serif;",
+    fontFamily: "'Kanit', sans-serif;",
     h1: {
       fontWeight: 600,
       fontSize: "2.25rem",
       lineHeight: "2.75rem",
-      fontFamily: "'Plus Jakarta Sans', sans-serif;",
+      fontFamily: "'Kanit', sans-serif;",
     },
     h2: {
       fontWeight: 600,
       fontSize: "1.875rem",
       lineHeight: "2.25rem",
-      fontFamily: "'Plus Jakarta Sans', sans-serif;",
+      fontFamily: "'Kanit', sans-serif;",
     },
     h3: {
       fontWeight: 600,
       fontSize: "1.5rem",
       lineHeight: "1.75rem",
-      fontFamily: "'Plus Jakarta Sans', sans-serif;",
+      fontFamily: "'Kanit', sans-serif;",
     },
     h4: {
       fontWeight: 600,

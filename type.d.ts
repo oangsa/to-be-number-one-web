@@ -7,6 +7,7 @@ type student = {
         class: number,
         reason: string,
         total: number,
+        oldMonth: number,
         timestamps: date,
     },
     loginData: {

@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import connectMongo from '@/src/libs/connectMongo'
 import Note from '@/src/models/schemas'
 
-export default async function checkAuth(req: NextApiRequest, res: NextApiResponse) {
+export default async function getUser(req: NextApiRequest, res: NextApiResponse) {
     const username: string = req.body.username
     const password: string = req.body.password
     if (req.method !== "POST") return res.status(405).send({message: "Only POST method is allowed!"})
